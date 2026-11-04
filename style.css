@@ -1,10 +1,11 @@
 main {
-    display: grid;
-    grid-template-columns: 200px 2fr 1fr;
-    grid-template-areas:
-    "h h h"
-    "n ar as"
-    "f f f";
+    display:grid;
+    grid-gap: 10px;   
+    grid-template-areas:"h h h h h h h h h h h h "
+                        "n n n n n n n n n n n n "
+                        "b b a a a a a a a j j j "
+                        "f f f f f f f f f f f f";
+  
 }
 
 header {
@@ -14,43 +15,30 @@ header {
 
 nav {
     grid-area: n;
-    background-color: rgb(42, 236, 236);
 }
 
 article {
-    grid-area: ar;
-    background-color: rgb(32, 168, 89);
+    grid-area: a;
 }
 
-aside {
-    grid-area: as;
-    background-color: rgb(137, 48, 196);
+.bal {
+    grid-area: b;
+}
+
+.jobb {
+    grid-area: j;
 }
 
 footer {
     grid-area: f;
-    background-color: rgb(216, 198, 93);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     main {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas:
-        "h h"
-        "n n"
-        "ar as"
-        "f f";
-    }
+    grid-template-areas:"h h h h h h h h h h h h "
+                        "n n n n n n n n n b b b "
+                        "a a a a a a a a a j j j "
+                        "f f f f f f f f f f f f";
+  
 }
-
-@media screen and (max-width: 600px) {
-    main {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "h"
-        "n"
-        "ar"
-        "as"
-        "f";
-    }
 }
